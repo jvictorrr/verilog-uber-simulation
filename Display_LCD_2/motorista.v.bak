@@ -1,0 +1,26 @@
+module motorista(liga_LED,inicio,fim,acende_verde,clk);
+input clk;
+input[3:0] liga_LED,inicio,fim;
+output [7:0]acende_verde;
+
+always@(posedge clk)
+begin
+	if(liga_LED>= inicio & acende_verde!=1)
+	begin
+		liga_LED = {liga_LED[0],liga_LED[3:1]};
+	end
+	else
+	begin
+		if(liga_LED != destino & acende_verde!=1)
+		begin
+		liga_LED = {liga_LED[3:1],liga_LED[0]};
+		end
+		else if (liga_LED==fim)
+			begin
+			acende_verde=1'b1111111;
+			end
+	end 
+end
+
+
+

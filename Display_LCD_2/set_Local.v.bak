@@ -1,0 +1,14 @@
+module set_Local(P,I,CLK,CLR);
+
+input CLK, CLR;
+output[5:0] P;
+			assign	P[0]= 8'h 4c; // L
+			assign	P[1]= 8'h 6e; // o
+			assign	P[2]= 8'h 63; // c
+			assign 	P[3]= 8'h 61; // a
+			assign	P[4]= 8'h 4c; // L
+			assign 	P[5] = 8'h 3a // :
+		
+
+		endmodule
+		

@@ -1,0 +1,84 @@
+module local_lcd(P0,P1,P2,P3,P4,P5,P6,P7,P8,P9,P10,P11,P12,P13,P14,P15,
+S0,S1,S2,S3,S4,S5,S6,S7,S8,S9,S10,S11,S12,S13,S14,S15,DECIDE,CLK,CLR,I);
+
+input DECIDE;
+input CLK, CLR;
+input [3:0]I;
+output [7:0] P6,P7,P8,P9,P10,P11,P12,P13,P14,P15,S8,S9,S10,S11,S12,S13,S14,S15;
+
+
+set_Local(P6,P7,P8,P9,P10,P11,P12,P13,P14,P15,S8,S9,S10,S11,S12,S13,S14,S15,DECIDE,CLK,CLR,I);
+
+			assign	P0= 8'h 4c; // L
+			assign	P1= 8'h 6e; // o
+			assign	P2= 8'h 63; // c
+			assign 	P3= 8'h 61; // a
+			assign	P4= 8'h 4c; // L
+			assign 	P5 = 8'h 3a; // :
+
+////////////////////////////////////////////////////////////
+
+			assign	S0= 8'h 44; // D
+			assign	S1= 8'h 65; // e
+			assign	S2= 8'h 73; // s
+			assign 	S3= 8'h 74; // t
+			assign	S4= 8'h 69; // i
+			assign 	S5 = 8'h6e;  // n
+			assign	S6= 8'h 6e; // o
+			assign 	S7 = 8'h 3a; // :
+	
+LCD_TEST u5	(	
+	
+							//	Host Side
+							.iCLK  	( CLOCK_50 ),
+							.iRST_N	( KEY[0]),
+							
+							//Data to display
+	/////////////////////////////////////////////////////////////////////////////////////////////						
+							// Para utilizar todo o Display LCD, deve-se
+							//	Escrever o caractere em hexadecimal de acordo com a tabela ASCII
+							// H� espa�o para 16 caracteres em cada uma das duas linhas
+	/////////////////////////////////////////////////////////////////////////////////////////////				
+	
+							.d000 ( P0 ),
+							.d001 ( P1 ),
+							.d002 ( P2 ),
+							.d003 ( P3 ),
+							.d004 ( P4 ),
+							.d005 ( P5) ,
+							.d006 ( P6 ),
+							.d007 ( P7 ),
+							.d008 ( P8 ),
+							.d009 ( P9 ),
+							.d010 ( P10 ),
+							.d011 ( P11 ),
+							.d012 ( P12 ),
+							.d013 ( P13 ),
+							.d014 ( P14 ),
+							.d015 ( P15 ),
+							
+							.d100 ( S0 ),
+							.d101 ( S1 ),
+							.d102 ( S2 ),
+							.d103 ( S3 ),
+							.d104 ( S4 ),
+							.d105 ( S5 ),
+							.d106 ( S6 ),
+							.d107 ( S7 ),
+							.d108 ( S8 ),
+							.d109 ( S9 ),
+							.d110 ( S10 ),
+							.d111 ( S11 ),
+							.d112 ( S12 ),
+							.d113 ( S13 ),
+							.d114 ( S14 ),
+							.d115 ( S15 ),
+							
+							//	LCD Side
+							
+							.LCD_DATA( LCD_DATA ),
+							.LCD_RW  ( LCD_RW ),
+							.LCD_EN	( LCD_EN ),
+							.LCD_RS  ( LCD_RS ));
+							
+     endmodule

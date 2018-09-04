@@ -1,0 +1,77 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'divisor_clock_50_1:comb_95|clk_out'
+Slack : -3.658
+TNS   : -156.675
+
+Type  : Slow Model Setup 'CLOCK_50'
+Slack : -3.505
+TNS   : -144.388
+
+Type  : Slow Model Setup 'KEY[1]'
+Slack : -1.353
+TNS   : -27.717
+
+Type  : Slow Model Hold 'CLOCK_50'
+Slack : -2.555
+TNS   : -2.555
+
+Type  : Slow Model Hold 'KEY[1]'
+Slack : 0.391
+TNS   : 0.000
+
+Type  : Slow Model Hold 'divisor_clock_50_1:comb_95|clk_out'
+Slack : 0.391
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'KEY[1]'
+Slack : -1.423
+TNS   : -158.064
+
+Type  : Slow Model Minimum Pulse Width 'CLOCK_50'
+Slack : -1.380
+TNS   : -78.380
+
+Type  : Slow Model Minimum Pulse Width 'divisor_clock_50_1:comb_95|clk_out'
+Slack : -0.500
+TNS   : -49.000
+
+Type  : Fast Model Setup 'divisor_clock_50_1:comb_95|clk_out'
+Slack : -1.219
+TNS   : -47.637
+
+Type  : Fast Model Setup 'CLOCK_50'
+Slack : -1.020
+TNS   : -30.716
+
+Type  : Fast Model Setup 'KEY[1]'
+Slack : -0.039
+TNS   : -0.039
+
+Type  : Fast Model Hold 'CLOCK_50'
+Slack : -1.595
+TNS   : -1.595
+
+Type  : Fast Model Hold 'KEY[1]'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Hold 'divisor_clock_50_1:comb_95|clk_out'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'KEY[1]'
+Slack : -1.423
+TNS   : -158.064
+
+Type  : Fast Model Minimum Pulse Width 'CLOCK_50'
+Slack : -1.380
+TNS   : -78.380
+
+Type  : Fast Model Minimum Pulse Width 'divisor_clock_50_1:comb_95|clk_out'
+Slack : -0.500
+TNS   : -49.000
+
+------------------------------------------------------------

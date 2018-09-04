@@ -1,0 +1,7 @@
+module set_led_motoristas(mot1,mot2,mot3;);
+output[2:0]mot1,mot2,mot3;
+assign mot1= 3;
+assign motb= 2;
+assign motc= 1;
+
+endmodule

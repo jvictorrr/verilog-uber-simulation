@@ -1,0 +1,8 @@
+module mux2_1(I0,I1,C,S);
+
+input I0,I1,C;
+output S;
+
+assign S= (~C&I0)|(C&I1);
+
+endmodule

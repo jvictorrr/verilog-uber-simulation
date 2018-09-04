@@ -1,0 +1,45 @@
+ module deslocamento(clk, liga_LED,acende_verde,inicio,fim);
+ 
+ input clk;
+input[8:0] inicio,fim;
+output reg [7:0]acende_verde;
+output reg[17:0] acende_vermelho ;
+output reg [8:0]liga_LED;
+reg [8:0]fio;
+ 
+ always@(posedge clk)
+ begin
+ if(liga_LED !=9'b 101101010)
+  begin
+ 	if(({liga_LED}> {fim}) && (acende_verde==~8'b00000000))
+		begin
+			liga_LED = fio >> 1;
+			fio = liga_LED;
+			end
+		else if(({liga_LED}<fim) && (acende_verde==~8'b00000000))
+		begin
+		   liga_LED= fio << 1;
+			fio = liga_LED;
+			end
+		else if(({liga_LED}== {fim}) && (acende_verde==~8'b00000000))
+			begin
+					acende_verde=~8'b00000001;
+					if(({liga_LED}>{inicio}) && (acende_verde==~8'b00000001))
+					begin
+					liga_LED= fio >> 1;
+						fio = liga_LED;
+					end
+					else if(({liga_LED}<{inicio}) && (acende_verde==~8'b00000001))
+					begin
+					liga_LED= fio << 1;
+						fio = liga_LED;
+					end
+					else if (({liga_LED}=={inicio})&&(acende_verde==~8'b00000001))
+					begin
+						acende_verde= ~8'b11111111;
+					end
+			end
+			end
+			end
+			
+			endmodule

@@ -1,0 +1,25 @@
+// Universidade Federal de Campina Grande
+// Electrical Engineering Department
+// Parking lot management system
+// Developed by André Nóbrega and Maxwell Albuquerque(MaXwEllDeN)
+// August 18 2017 2017.1 Semester
+// andre.nobrega@ee.ufcg.edu.br
+// maxwell@lsd.ufcg.edu.br
+
+// Module parameters
+// D: 	Flip-Flop data input
+// CLK: Clock signal
+// CLR: Clear signal
+// Q: 	Flip-Flop output
+
+module FF_D(D, CLK, CLR, Q);
+	input D, CLK, CLR;
+	output Q;
+	reg Q;
+
+	always @ (negedge CLK or posedge CLR)
+		if (CLR)
+			Q = 0;
+		else
+			Q = D;
+endmodule
